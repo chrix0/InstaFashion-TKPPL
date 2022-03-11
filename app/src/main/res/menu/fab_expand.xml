@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/basket"
+        android:icon="@drawable/shop_fab_basket"
+        android:title="@string/basket"/>
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/shop_transaction_history"
+        android:title="@string/transaction_history"/>
+</menu>

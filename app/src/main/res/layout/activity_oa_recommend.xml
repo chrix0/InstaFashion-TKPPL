@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".oa_recommend">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ourRecommendation" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="@string/analogous"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/analogous_colors_are_groups_of_three_colors_that_are_next_to_each_other_on_the_color_wheel_and_a_tertiary_red_orange_and_red_orange_are_examples"></TextView>
+            <FrameLayout
+                android:id="@+id/scrollAnalog"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="horizontal">
+
+                <TextView
+                    android:id="@+id/zeroAnalog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:text="@string/noRecItems"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemAnalog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"/>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="@string/complement"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/complementary_colors_are_pairs_of_colors_which_when_combined_or_mixed_cancel_each_other_out"></TextView>
+            <FrameLayout
+                android:id="@+id/scrollComp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="horizontal">
+                <TextView
+                    android:id="@+id/zeroComp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:text="Sorry. No outift recommendations for this category."/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemComp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/tryAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/try_again" />
+
+            <Button
+                android:id="@+id/backToShop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:text="@string/return_to_shop" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

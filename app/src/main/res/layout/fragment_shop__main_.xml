@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Shop_Main_Frag">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            >
+            <!--FOOD-->
+            <RelativeLayout
+                android:id="@+id/food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/title_food"
+                    android:layout_width="233dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_foods"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/moreFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/title_food"
+                    android:text="@string/more_items" />
+
+                <ScrollView
+                    android:id="@+id/scrollFood"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/title_food"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/foodList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+            </RelativeLayout>
+
+            <!--UTENSILS-->
+            <RelativeLayout
+                android:id="@+id/utensils"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/food"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/title_utensils"
+                    android:layout_width="233dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_tools_and_supplies"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/moreUtensils"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/title_utensils"
+                    android:text="@string/more_items" />
+
+                <ScrollView
+                    android:id="@+id/scrollUtensils"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/title_utensils"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/utensilsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+
+            </RelativeLayout>
+
+            <!--OUTFIT-->
+            <RelativeLayout
+                android:id="@+id/outfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/utensils"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/title_outfit"
+                    android:layout_width="233dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_outfit"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/moreOutfit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/title_outfit"
+                    android:text="More items" />
+
+                <ScrollView
+                    android:id="@+id/scrollOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@id/title_outfit"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/outfitList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/analyzer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/scrollOutfit"
+                    android:drawableLeft="@drawable/shop_frag_analyzer"
+                    android:text="Try our outfit analyzer!" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/speedDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:fabDrawable="@drawable/shop_fab_basket"
+        app:fabDrawableTint="@color/black"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/fab_expand"
+        app:miniFabBackgroundTint="@color/sandyBrown"
+        app:miniFabDrawableTint="?attr/colorPrimaryDark"
+        app:miniFabTitleTextColor="?attr/colorPrimaryDark"
+        android:layout_margin="16dp"
+        app:touchGuard="true"/>
+</FrameLayout>

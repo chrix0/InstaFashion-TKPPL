@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shop_checkout"
+    android:padding="25dp"
+    android:weightSum="100"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/title_metode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_payment_method"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/pilih_metode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_metode">
+            <RadioButton
+                android:id="@+id/kartu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/method_1_card"/>
+            <RadioButton
+                android:id="@+id/virtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/method_2_virtual"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/areaAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/pilih_metode"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pilih_metode"
+                android:weightSum="8">
+
+                <TextView
+                    android:id="@+id/title_alamat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.5"
+                    android:text="@string/shipping_address"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ubahAlamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:text="@string/edit"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Jl. BZ Hamid Komplek Mitra Lama no.11 LK X, Sumatera Utara, Medan Johor, blablablablablaaisjdaisjdaidjaoidja aisdjaoidajdoiadoisadjoiajdaodaoidsjoij"
+                android:maxLines="3"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/areaTelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/areaAlamat"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pilih_metode"
+                android:weightSum="8">
+
+                <TextView
+                    android:id="@+id/title_telp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.5"
+                    android:text="@string/phone_number"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/ubahTelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:text="@string/edit"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/telp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="083199020700"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <View
+        style="@style/Divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"></Space>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:text="@string/subtotal"/>
+        <TextView
+            android:id="@+id/subtotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Rp. 0"
+            android:gravity="end"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:text="@string/shipping_cost"/>
+        <TextView
+            android:id="@+id/ongkir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Rp. 0"
+            android:gravity="end"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:text="@string/total"/>
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Rp. 0"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#e09f12"
+            android:text="@string/checkout" />
+
+    </RelativeLayout>
+
+</LinearLayout>

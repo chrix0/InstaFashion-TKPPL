@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:weightSum="16"
+    style="@style/Theme.AppCompat.NoActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Title"
+            android:text="TEXT"
+            android:textSize="28dp"></TextView>
+
+        <View
+            style="@style/Divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_nav"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBottom"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1.5"
+        android:background="@color/sandyBrown"
+        app:itemIconTint="@color/darkerBrown"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_navigation_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</LinearLayout>

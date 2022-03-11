@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:weightSum="100"
+    tools:context=".shop_infoProduk">
+
+    <ImageView
+        android:id="@+id/productImg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:src="@drawable/test_dog" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productImg"
+        android:paddingTop="15dp"
+        android:text="TEST DOGS ARE NOT FOODS"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rp.???,-"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/title_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="@string/information"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        style="@style/Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.3"
+        android:background="@color/grey" />
+
+    <ScrollView
+        android:id="@+id/information"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/title_info"
+        android:layout_weight="30"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Why painful the sixteen how minuter looking nor. Subject but why ten earnest husband imagine sixteen brandon. Are unpleasing occasional celebrated motionless unaffected conviction out. Evil make to no five they. Stuff at avoid of sense small fully it whose an. Ten scarcely distance moreover handsome age although. As when have find fine or said no mile. He in dispatched in imprudence dissimilar be possession unreserved insensible. She evil face fine calm have now. Separate screened he outweigh of distance landlord."
+            android:textSize="13sp" />
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_below="@id/information"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/jumlahBarang"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/title_jumlah"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/quantity"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/buttonDec"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#e09f12"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/Quantity"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="#a6a4a1"
+                    android:gravity="center"
+                    android:text="1"></TextView>
+
+                <Button
+                    android:id="@+id/buttonInc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#e09f12"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="+" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/addToCart"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/jumlahBarang"
+            android:background="#e09f12"
+            android:text="@string/add_to_basket" />
+    </RelativeLayout>
+</LinearLayout>

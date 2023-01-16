@@ -2,6 +2,7 @@ package com.PisangHitam.InstaFashion
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.inputmethod.EditorInfo
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.GridLayoutManager
@@ -17,13 +18,20 @@ class shop_productList : AppCompatActivity() {
         val intentData = intent
         var tempList : MutableList<classProduk> = mutableListOf()
         setTitle(intentData.getStringExtra(CHANGE_TITLE))
-        val allData = intentData.getParcelableArrayListExtra<classProduk>(EXTRA_PRODUCT) as MutableList<classProduk>
-        tempList.addAll(allData)
+//        val allData = intentData.getParcelableArrayListExtra<classProduk>(EXTRA_PRODUCT) as MutableList<classProduk>
+        var db = singletonData.getRoomHelper(this)
 
-        //Adapter + on click event
+        val allData = db.daoOutfitList().getAllOutfit() as MutableList<classProduk>
+
+        if(intent.hasExtra(SEARCH_FROM_MAIN))
+            tempList.addAll(filter(intentData.getStringExtra(SEARCH_FROM_MAIN)!!, allData))
+        else
+            tempList.addAll(allData)
+
+        //Adapter + on click events
         adapter = recycler_products_adapter(tempList){
             val info = Intent(this, shop_infoProduk::class.java)
-            info.putExtra(SHOW_PRODUCT_INFO, it)
+            info.putExtra(SHOW_PRODUCT_INFO, it as Parcelable)
             info.putExtra(CHANGE_TITLE,getString(R.string.product_info_title))
             startActivity(info)
         }
@@ -37,7 +45,7 @@ class shop_productList : AppCompatActivity() {
                 tempList.addAll(filter(search.text.toString(),allData))
                 adapter = recycler_products_adapter(tempList){
                     val info = Intent(this, shop_infoProduk::class.java)
-                    info.putExtra(SHOW_PRODUCT_INFO, it)
+                    info.putExtra(SHOW_PRODUCT_INFO, it as Parcelable)
                     info.putExtra(CHANGE_TITLE,getString(R.string.product_info_title))
                     startActivity(info)
                 }
@@ -81,20 +89,12 @@ class shop_productList : AppCompatActivity() {
         }
     }
 
-    private fun filter(searchText : String, data : MutableList<classProduk>) : MutableList<classProduk>{
-        var newList : MutableList<classProduk> = mutableListOf()
-        var text = searchText.trim().lowercase()
-        if (text.equals("")){
-            newList.addAll(data)
-        }
-        else{
-            for(i : classProduk in data){
-                if(i.namaProduk.lowercase().contains(text)){
-                    newList.add(i)
-                }
-            }
-        }
+    private fun filter(searchText : String, data : MutableList<classProduk>) : List<classProduk>{
+        var newList : List<classProduk> = mutableListOf()
 
+        var db = singletonData.getRoomHelper(this)
+        var like = "%${searchText}%"
+        newList = db.daoOutfitList().getOutfitLike(like)
         return newList
     }
 

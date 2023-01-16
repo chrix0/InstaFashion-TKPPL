@@ -3,6 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="a">
+    app:startDestination="@id/shop_Main_Frag">
 
+    <fragment
+        android:id="@+id/profile_Main_Frag"
+        android:name="com.PisangHitam.InstaFashion.Profile_Main_Frag"
+        android:label="fragment_profile__main_"
+        tools:layout="@layout/fragment_profile__main_" />
+    <fragment
+        android:id="@+id/shop_Main_Frag"
+        android:name="com.PisangHitam.InstaFashion.Shop_Main_Frag"
+        android:label="fragment_shop__main_"
+        tools:layout="@layout/fragment_shop__main_" />
+    <fragment
+        android:id="@+id/wishlist_Main_Frag"
+        android:name="com.PisangHitam.InstaFashion.Wishlist_Main_Frag"
+        android:label="fragment_wishlist__main_"
+        tools:layout="@layout/fragment_wishlist__main_" />
 </navigation>

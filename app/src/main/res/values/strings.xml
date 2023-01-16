@@ -1,3 +1,207 @@
 <resources>
     <string name="app_name">InstaFashion</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- EXTRACT STRING RESOURCE DI SINI -->
+
+    <!--Splash-->
+    <string name="adopetsTitle">Adopets</string>
+
+    <!--Bottom NavBar + Main-->
+    <string name="adopt">Adopt</string>
+    <string name="shop">Shop</string>
+    <string name="wiki">Wiki</string>
+    <string name="breed">Breed</string>
+    <string name="profile">Profile</string>
+
+    <!-- Shop -->
+
+    <!--Shop - Basket-->
+    <string name="your_basket">Your basket</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="choose_payment_method">Choose payment method</string>
+
+    <!--Shop - Checkout-->
+    <string name="method_1_card">Credit card / Gopay / OVO</string>
+    <string name="method_2_virtual">Virtual Account</string>
+    <string name="shipping_address">Shipping address</string>
+    <string name="edit">Edit</string>
+    <string name="phone_number">Phone number</string>
+    <string name="shipping_cost">Shipping cost</string>
+    <string name="total">Total</string>
+    <string name="checkout">Checkout</string>
+
+    <!--Shop - Info Produk-->
+    <string name="information">Information</string>
+    <string name="quantity">Quantity</string>
+    <string name="add_to_basket">Add to basket</string>
+
+    <!--Shop - Product List-->
+    <string name="search_product">Search product</string>
+
+    <!--Shop - Tracker-->
+    <string name="return_to_main_page">Return to main page</string>
+
+    <!--Shop - Dialog Checkout Address -->
+    <string name="province">Province</string>
+    <string name="city">City</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!--Shop - Dialog Phone Number  -->
+    <!--none, phone number, save, cancel sudah ada -->
+
+    <!--Shop - Dialog History / Tracker -->
+    <string name="transaction_id">Transaction ID</string>
+    <string name="customer_s_username">Customer\'s username</string>
+    <string name="time_of_purchase">Time of Purchase</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="close_details">Close details</string>
+
+    <!--Shop - Main Fragment -->
+    <string name="pet_foods">Pet foods</string>
+    <string name="pet_tools_and_supplies">Pet Tools and Supplies</string>
+    <string name="more_items">More items</string>
+    <string name="pet_outfit">Pet Outfit</string>
+
+    <!--Shop - FAB Menu -->
+    <string name="basket">Basket</string>
+    <string name="transaction_history">Transaction History</string>
+
+    <!--Shop - Sort Menu -->
+    <string name="sort_by_highest_price">Sort by highest price</string>
+    <string name="sort_by_lowest_price">Sort by lowest price</string>
+
+    <!--Shop - Recycler Tracker -->
+    <string name="in_preparation">In preparation</string>
+    <string name="details">Details</string>
+    <string name="cancel_order">Cancel order</string>
+    <!--Recycler shop lain tidak perlu diextract stringnya -->
+
+    <!-- [ Beberapa string di dalam code yang perlu diextract.. ] -->
+    <!--Shop - Basket -->
+    <string name="empty_basket">Your basket is empty!</string>
+
+    <!--Shop - Checkout -->
+    <string name="promptAddress">(Tap edit button to add address)</string>
+    <string name="promptPhone">(Tap edit button to add phone number)</string>
+    <string name="change_address">Change Shipping Address</string>
+    <string name="need_all_filled">You need to fill every field.</string>
+    <string name="success_update_address">Your address has been successfully updated.</string>
+    <string name="change_phone">Change Phone Number</string>
+    <string name="need_phone_filled">You need to enter your phone number.</string>
+    <string name="success_update_phone">Your phone number has been successfully updated.</string>
+
+    <!--Shop - Main Fragment -->
+    <string name="product_info_title">Product Info</string>
+    <string name="pet_foods_title">Pet Foods</string>
+    <string name="pet_tools_title">Pet Tools and Supplies</string>
+    <string name="pet_outfit_title">Pet Outfits</string>
+
+    <!--Shop - Tracker -->
+    <string name="purchase_history_title">Shop Purchase History</string>
+    <string name="purchase_details_title">Purchase Details</string>
+
+    <!--Shop - Basket Recycler Adapter -->
+    <string name="deleteFromBasketPrompt">Delete product from basket?</string>
+    <string name="confirmDeleteFromBasket">You are going to delete %1$s from your basket.</string>
+    <string name="OK">OK</string>
+    <!--Cancel sudah ada -->
+
+    <!--Shop - Shop Transaction Adapter-->
+    <string name="cancelOrderDialogTitle">Cancel order?</string>
+    <string name="cancelOrderExplain">Your order will be canceled and deleted.</string>
+    <string name="productCount">Product count : </string>
+
+
+    <!-- Outfit Analyzer -->
+    <!-- Pet Pic -->
+    <string name="stepTitle">Step:</string>
+    <string name="stepCount12">1 out of 2</string>
+    <string name="take_a_picture_of_your_pet">Take a picture of your pet.</string>
+    <string name="open_camera">Open camera</string>
+    <string name="from_gallery">From gallery</string>
+    <string name="detected_color">Detected color</string>
+    <string name="make_sure_the_object_is_close_to_the_camera_for_the_best_result">Make sure the object is close to the camera for the best result</string>
+    <string name="next">Next</string>
+
+    <!-- Outfit pic -->
+    <string name="stepCount22">2 out of 2</string>
+    <string name="take_a_picture_of_your_pet_s_outfit">Take a picture of your pet\'s outfit</string>
+    <string name="analyze">Analyze</string>
+
+    <!-- Result -->
+    <string name="result">Result</string>
+    <string name="your_pet">Your pet:</string>
+    <string name="your_pet_s_outfit">Your pet\'s outfit:</string>
+    <string name="recommended_color_and_similiarity_percentage">Recommended color and similiarity percentage</string>
+    <string name="recommended_outfits">Recommended outfits</string>
+
+    <!-- Recommendation -->
+    <string name="ourRecommendation">Here is our recommedation based on your pet\'s color.</string>
+    <string name="analogous">Analogous</string>
+    <string name="analogous_colors_are_groups_of_three_colors_that_are_next_to_each_other_on_the_color_wheel_and_a_tertiary_red_orange_and_red_orange_are_examples">Analogous colors are groups of three colors that are next to each other on the color wheel, and a tertiary. Red, orange, and red-orange are examples.</string>
+    <string name="noRecItems">Sorry. No outift recommendations for this category.</string>
+    <string name="complement">Complement</string>
+    <string name="complementary_colors_are_pairs_of_colors_which_when_combined_or_mixed_cancel_each_other_out">Complementary colors are pairs of colors which, when combined or mixed, cancel each other out.</string>
+    <string name="try_again">Try again</string>
+    <string name="return_to_shop">Return to shop</string>
+
+
+    <!-- [ Beberapa string di dalam code yang perlu diextract.. ] -->
+    <!-- Pet Pic -->
+    <string name="petAnalyzerTitle">Pet Outfit Analyzer</string>
+    <string name="need_pet_pic">Please take a picture of your pet before continuing.</string>
+
+    <!--Outfit Pic-->
+    <string name="need_outfit_pic">Please take a picture of your pet\'s outfit before continuing</string>
+
+    <!--Result-->
+    <string name="Analysis_Result">Analysis Result</string>
+    <string name="result_pass">Your color choice of your outfit is looking good! You can check for more outfits by pressing the button below.</string>
+    <string name="result_faulty">Your color choice of your outfit seems to be unsuitable. You can follow one of the recommended colors or tap the button below to check for outfits which are suitable for you!</string>
+
+    <!--Recommend-->
+    <string name="recommendLoading">Processing. Do not worry. It will be faster next time.</string>
+    <string name="recommedationTitle">Recommendation</string>
+
+    <string-array name="spinner_petCategoryItem">
+        <item>All</item>
+        <item>Cat</item>
+        <item>Dog</item>
+    </string-array>
+
+
+    <!--BANNER ID-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
 </resources>

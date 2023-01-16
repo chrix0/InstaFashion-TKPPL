@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/adopt_Main_Frag"
-        android:enabled="true"
-        android:icon="@drawable/navbar_adopt"
-        android:title="@string/adopt"/>
-    <item
         android:id="@+id/shop_Main_Frag"
         android:enabled="true"
         android:icon="@drawable/navbar_shop"
-        android:title="@string/shop"/>
+        android:title="Shop"/>
     <item
-        android:id="@+id/wiki_Main_Frag"
+        android:id="@+id/wishlist_Main_Frag"
         android:enabled="true"
-        android:icon="@drawable/navbar_wiki"
-        android:title="@string/wiki"/>
-    <item
-        android:id="@+id/breed_Main_Frag"
-        android:enabled="true"
-        android:icon="@drawable/navbar_breed"
-        android:title="@string/breed"/>
+        android:icon="@drawable/navbar_shop_wishlist_filled"
+        android:title="Wishlist"/>
     <item
         android:id="@+id/profile_Main_Frag"
         android:enabled="true"
-        android:icon="@drawable/navbar_profile"
-        android:title="@string/profile"/>
+        android:icon="@drawable/navbar_profile_filled"
+        android:title="Profile"/>
 </menu>

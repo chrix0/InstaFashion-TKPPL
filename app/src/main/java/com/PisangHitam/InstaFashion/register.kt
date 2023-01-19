@@ -6,9 +6,15 @@ import android.os.Bundle
 import android.widget.Toast
 import com.PisangHitam.InstaFashion.LoginActivity
 import com.PisangHitam.InstaFashion.classAccount
+import com.PisangHitam.InstaFashion.realtimeDB.fbDatabase
 import kotlinx.android.synthetic.main.activity_register.*
 
 class register : AppCompatActivity() {
+
+    private val EXTRA_REG_USER = "USER"
+    private val EXTRA_REG_PASS = "PASS"
+    private val EXTRA_REG_FN = "FULLNAME"
+    private val EXTRA_REG_EM = "EMAIL"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,9 +24,10 @@ class register : AppCompatActivity() {
         lateinit var cfullName : String
         lateinit var cemail : String
 
+        var db = singletonData.getRoomHelper(applicationContext)
 
         var clsAccount = classAccount(
-            singletonData.accList.size,
+            0,
             "TESTACCOUNT",
             "TEST",
             "Test Account",
@@ -28,14 +35,15 @@ class register : AppCompatActivity() {
             mutableListOf(),
             mutableListOf("","","",""),
             "",
+            mutableListOf(),
+            mutableListOf(),
             mutableListOf()
         )
 
         fun checkdupe(string : String) : Boolean{
-            for(i in singletonData.accList){
-                if(string.equals(i.userName)){
-                    return true
-                }
+            var getAccount = db.daoAccount().getAccUserCheck(string)
+            if (getAccount.isNotEmpty()) {
+                return true
             }
             return false
         }
@@ -63,13 +71,38 @@ class register : AppCompatActivity() {
                     clsAccount.fullName=cfullName
                     clsAccount.email=cemail
 
-                    singletonData.accList.add(clsAccount)
-                    Toast.makeText(this, "Your account has been successfully created", Toast.LENGTH_SHORT).show()
+//                    singletonData.accList.add(clsAccount)
 
-                    var intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
+                    var fbDb = fbDatabase(this)
+
+                    if (!fbDb.foundAcc(singletonData.fbUpdated, cuserName, cpassword)){
+                        fbDb.saveAcc(cuserName, cpassword)
+                        db.daoAccount().newAcc(clsAccount)
+                        Toast.makeText(this, "Your account has been successfully created", Toast.LENGTH_SHORT).show()
+                        var intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else{
+                        Toast.makeText(this, "another account existed", Toast.LENGTH_SHORT).show()
+                    }
+
                 }
             }
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(EXTRA_REG_USER, username.text.toString())
+        outState.putString(EXTRA_REG_PASS, password.text.toString())
+        outState.putString(EXTRA_REG_FN, fullname.text.toString())
+        outState.putString(EXTRA_REG_EM, email.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        username.setText(savedInstanceState?.getString(EXTRA_REG_USER,""))
+        password.setText(savedInstanceState?.getString(EXTRA_REG_PASS,""))
+        fullname.setText(savedInstanceState?.getString(EXTRA_REG_FN,""))
+        email.setText(savedInstanceState?.getString(EXTRA_REG_EM,""))
     }
 }

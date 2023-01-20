@@ -21,7 +21,21 @@ class shop_basket : AppCompatActivity() {
 
         val intentData = intent
 
-        val allData : MutableList<classItemBasket> = singletonData.accList[singletonData.currentAccId].cartContent
+        val db = singletonData.getRoomHelper(this)
+        var userArray = db.daoAccount().getAccById(singletonData.currentAccId)
+
+        var user : classAccount?
+        var cartContent : MutableList<classItemBasket>?
+
+        if(userArray.isEmpty()){
+            user = db.daoAccount().getAccUserCheck("TEST")[0]
+        }
+        else{
+            user = userArray[0]
+        }
+
+        val allData = user.cartContent
+//            singletonData.accList[singletonData.currentAccId].cartContent
 
         if(intentData.hasExtra(ADD_TO_CART)){
             val item = intentData.getParcelableExtra<classItemBasket>(ADD_TO_CART) as classItemBasket
@@ -41,19 +55,25 @@ class shop_basket : AppCompatActivity() {
             else{
                 allData.add(item)
             }
+
+            //UPDATE
+            val user = singletonData.getCurUserObj(this)
+            user?.cartContent = allData
+            db.daoAccount().updateAcc(user!!)
         }
 
         allData.reverse()
+//        singletonData.getCurUserObj(this)!!.cartContent
         adapter = recycler_basket_adapter(this, allData){
             adapter.notifyDataSetChanged()
-            this.subtotal.setText("Rp." + singletonData.formatHarga(singletonData.subtotalInCart()))
+            this.subtotal.setText("Rp." + singletonData.formatHarga(singletonData.subtotalInCart(allData)))
         }
         basketList.layoutManager = LinearLayoutManager(this)
         basketList.adapter = adapter
 
         var ongkos = 5000
 
-        subtotal.setText("Rp." +singletonData.formatHarga(singletonData.subtotalInCart()))
+        subtotal.setText("Rp." +singletonData.formatHarga(singletonData.subtotalInCart(allData)))
         //ongkir.setText(singletonData.formatHarga(ongkos))
         //total.setText(singletonData.formatHarga(singletonData.totalInCart()))
 
@@ -72,4 +92,5 @@ class shop_basket : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
 }

@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ourRecommendation" />
+            android:text="Here is our recommendations:" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,6 +105,7 @@
                 android:id="@+id/backToShop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:background="@color/transparent"
                 android:text="@string/return_to_shop" />
         </LinearLayout>

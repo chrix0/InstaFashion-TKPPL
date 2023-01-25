@@ -8,14 +8,14 @@ import android.os.Bundle
 
 import android.graphics.Bitmap
 import android.os.AsyncTask
+import android.os.Parcelable
 import android.view.View
 import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.PisangHitam.InstaFashion.OA_petPic
-import com.PisangHitam.InstaFashion.classProduk
 import dev.jorgecastillo.androidcolorx.library.RGBColor
 import dev.jorgecastillo.androidcolorx.library.asRgb
 import kotlinx.android.synthetic.main.activity_oa_recommend.*
+import java.time.temporal.ValueRange
 
 @Suppress("DEPRECATION")
 class oa_recommend : AppCompatActivity() {
@@ -34,7 +34,7 @@ class oa_recommend : AppCompatActivity() {
         actionbar!!.title = getString(R.string.recommedationTitle)
 
         tryAgain.setOnClickListener {
-            var intent = Intent(this, OA_petPic::class.java)
+            var intent = Intent(this, oa_container::class.java)
             startActivity(intent)
         }
 
@@ -50,14 +50,17 @@ class oa_recommend : AppCompatActivity() {
         var dialog = ProgressDialog(context)
         override fun doInBackground(vararg p0: Void?): Unit? {
             if (!singletonData.allImageProcessed){
-                for(i in 0 until singletonData.petOutfitList.size){
-                    singletonData.petOutfitList[i].savedBitmap = singletonData.petOutfitList[i].getBitmapBackground()
+                for(i in 0 until singletonData.outfitList.size){
+                    singletonData.outfitList[i].savedBitmap = singletonData.outfitList[i].getBitmapBackground()
                 }
                 singletonData.allImageProcessed = true
             }
             firstnComplement= checkColor(singletonData.OASession.rec[0].asRgb())
+
             firstnAnalog = mutableListOf()
             firstnAnalog.addAll(checkColor(singletonData.OASession.rec[1].asRgb()))
+            //Ada kemungkinan terdapat item yang sama di dalam rekomendasi warna analog pertama,
+            //sehingga dilakukan removeAll berdasarkan item yang dihasilkan pada rekomendasi warna kedua
             firstnAnalog.removeAll(checkColor(singletonData.OASession.rec[2].asRgb()))
             firstnAnalog.addAll(checkColor(singletonData.OASession.rec[2].asRgb()))
 
@@ -111,7 +114,7 @@ class oa_recommend : AppCompatActivity() {
     fun checkColor(color : RGBColor) : MutableList<classProduk> {
         var temp : MutableList<classProduk> = mutableListOf()
 
-        for(i : classProduk in singletonData.petOutfitList){
+        for(i : classProduk in singletonData.outfitList){
             var colorPalette = createPaletteSync(i.savedBitmap!!)
             var dominantItemColor = colorPalette.dominantSwatch!!.rgb.asRgb()
 
@@ -158,7 +161,8 @@ class oa_recommend : AppCompatActivity() {
                 maxIndex = idx
             }
         }
-        //Kelemahannya untuk warna hitam atau putih mungkin kurang cocok
+
+        //Untuk warna hitam atau putih mungkin kurang cocok
         var conclusion = when(maxIndex){
             0 -> "RED"
             1 -> "GREEN"

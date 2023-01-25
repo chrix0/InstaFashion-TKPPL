@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/your_pet"
+                android:text="First outfit"
                 android:gravity="center" />
 
             <androidx.cardview.widget.CardView
@@ -63,7 +63,7 @@
                 android:id="@+id/image2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/your_pet_s_outfit"
+                android:text="Second outfit"
                 android:gravity="center"
                 android:layout_marginTop="10dp"/>
 

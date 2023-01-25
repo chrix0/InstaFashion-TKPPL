@@ -16,11 +16,11 @@ class OA_result : AppCompatActivity() {
         val actionbar = supportActionBar
         actionbar!!.title = getString(R.string.Analysis_Result)
 
-        imagePet.setImageBitmap(singletonData.OASession.petPic)
-        imageOutfit.setImageBitmap(singletonData.OASession.outiftPic)
+        imagePet.setImageBitmap(singletonData.OASession.pic1)
+        imageOutfit.setImageBitmap(singletonData.OASession.pic2)
 
-        var petHex = Color.parseColor("${singletonData.OASession.petHex}")
-        var outfitHex = Color.parseColor("${singletonData.OASession.outfitHex}")
+        var petHex = Color.parseColor("${singletonData.OASession.pic1Hex}")
+        var outfitHex = Color.parseColor("${singletonData.OASession.pic2Hex}")
 
         val compliment = petHex.complimentary()
         val analogous = petHex.analogous()

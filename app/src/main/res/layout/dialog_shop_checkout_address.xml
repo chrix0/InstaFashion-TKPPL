@@ -133,6 +133,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cancel"
         android:elevation="10dp"
+        android:textColor="@color/pal1"
         android:background="@color/transparent"/>
 
 </LinearLayout>

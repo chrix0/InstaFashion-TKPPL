@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/choose_payment_method"
-            android:textColor="@color/black"
+            android:textColor="@color/pal1"
             android:textSize="17sp"
             android:textStyle="bold" />
 
@@ -61,7 +61,7 @@
                     android:layout_weight="7.5"
                     android:text="@string/shipping_address"
                     android:textSize="17sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/pal1"
                     android:textStyle="bold" />
 
                 <Button
@@ -101,7 +101,7 @@
                     android:layout_weight="7.5"
                     android:text="@string/phone_number"
                     android:textSize="17sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/pal1"
                     android:textStyle="bold" />
 
                 <Button

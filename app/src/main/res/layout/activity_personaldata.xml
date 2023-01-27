@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Personaldata">
 
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -40,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Your Name"
+        android:text="Account name"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Email"
+        android:text="Email address"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Address"
+        android:text="Home Address"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,11 +19,11 @@
            android:text="Your wishlist"
            android:textAppearance="?android:textAppearanceLarge"
            android:textStyle="bold"
-           android:layout_weight="6"/>
+           android:layout_weight="4"/>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="94">
+            android:layout_weight="96">
                 <TextView
                     android:id="@+id/nothing_text"
                     android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="vertical"
-                    android:fadeScrollbars="false"
+                    android:fadeScrollbars="True"
                     android:scrollbarStyle="outsideOverlay"
                     android:scrollbarAlwaysDrawVerticalTrack="true">
                     <androidx.recyclerview.widget.RecyclerView

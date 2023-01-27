@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.InstaFashion.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/widget"
+    android:theme="@style/Theme.InstaFashion.AppWidgetContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextClock
+                android:id="@+id/theClock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:format12Hour="hh:mm a"
+                android:format24Hour="hh:mm"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@color/grey"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/pal3">
+                <TextView
+                    android:id="@+id/pointlessRec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="Check this out! : TEST"
+                    android:ellipsize="marquee"
+                    android:gravity="left"
+                    android:textColor="@color/white"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+</LinearLayout>

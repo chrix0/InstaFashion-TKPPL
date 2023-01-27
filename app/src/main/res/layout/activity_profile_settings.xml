@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile_settings"
+    android:weightSum="12"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <!--RECOMMENDATION DISABLER-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="10"
+        android:scrollbars="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification Settings"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/recNotifSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommendation Notification" />
+
+
+        <!--BGM-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Background Music"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/player_stop"
+                android:button="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="20dp"
+                android:drawableRight="@drawable/playerstoptoggle"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/player_play"
+                android:button="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="20dp"
+                android:drawableRight="@drawable/playerplaytoggle"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/player_pause"
+                android:button="@null"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="20dp"
+                android:drawableRight="@drawable/playerpausetoggle"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reward Video"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No reward ads available"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SHOW REWARD VIDEO"
+                android:visibility="gone"
+                android:id="@+id/showRewardAd"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/countWatch"
+            android:text="Watch points : 0"/>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+
+</LinearLayout>
